@@ -1,59 +1,150 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+@main-color: rebeccapurple;
+@main-font: 'Roboto Mono', monospace;
+
+
+.centre(){
+  display:flex;
+  justify-content:center;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.bordered(){
+  border: 3px dotted orange;
+  margin: 2%;
+  padding:2%;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; 
 }
 
-html, body {
-    height: 100%;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
+
+h1, h2, h3, h4, h5 {
+  font-size: 2rem;
+}
+body{
+  font-family: @main-font;
+}
+img {
+ width: 100%;
+ height: auto;
+}
+
+p {
+  line-height: 1.25;
+  margin: 20px 0;
+  font-size: 1.8rem;
+  .bordered();
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+
+strong {
+  font-weight: bold;
+  color: blue;
+}
+
+header {
+  border-bottom: 1px solid black;
+  margin: 20px 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+
+  @media( max-width: 515px ) {
+    flex-direction: column;
+    align-items: center;
+  } // this closes my header media query 
+
+  h1 {
+    font-size: 2rem;
+
+    @media( max-width: 515px ) {
+      margin-bottom: 20px;
+    }// this closes the media query 
+  } // this closes the h1
+
+  nav {
+display: flex;     
+    @media( max-width: 515px ) {
+      margin-left: 0;
+    }// this closes the media query
+   a {
+      margin-left: 10px;
+      font-size: 1rem;
+    }// this closes the links 
+  }//this closes the nav
+}//this closes the header
+
+
+header nav .first-anchor {
+  margin-left: 0;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media( max-width: 515px ) {
+    flex-direction: column;
+  }// this closes the media query
+  
+  section {
+    margin: 20px 2.5%;
+    width: 45%;
+
+    @media( max-width: 515px ) {
+      width: 40%;
+    }  // this closes the media query for the section
+  }// this closes the section 
+}// this closes main-content
+
+
+.main-footer {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  padding-top: 20px;
+
+  nav {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+  } // this closes the footer nav
+}// this closes the footer
+
+.btn-parent{
+  .centre();
+}
+.Contact-btn {
+ display: block;
+ background-color: @main-color;
+ margin: 0 10px 20px;
+ cursor: pointer;
+ width: 200px;
+ height: 45px;
+ font-size: 2rem;
+ border-radius: 10px;
+
+  @media( max-width: 515px ) {
+    width: 90%;
+    height: 50px;
+    font-size: 2.5rem;
+  }// this closes the media query of 515px
+  
+  @media( max-width: 400px ) {
+    background: green;
+    color: white;
+  }// this closes the media query of 400px 
+}// this closes the button
+
 
